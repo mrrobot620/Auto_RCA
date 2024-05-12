@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto RCA</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS for glassmorphism effect -->
+  <style>
+    body {
+      background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url('https://source.unsplash.com/random') fixed;
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      backdrop-filter: blur(10.5px);
+      -webkit-backdrop-filter: blur(10.5px);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      margin-bottom: 20px;
+    }
+
+    .glass-card .card-header {
+      background: rgba(255, 255, 255, 0.25);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark">
+    <span class="navbar-brand mb-0 h1">Auto RCA</span>
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Card for CSV uploader -->
+      <div class="col-md-6">
+        <div class="card glass-card">
+          <div class="card-header">
+            Upload CSV File
+          </div>
+          <div class="card-body">
+            <form action="/upload" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+    <input type="file" class="form-control-file" id="csvFileInput" name="csvFile">
+  </div>
+  <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card for dynamic data table -->
+      <div class="col-md-6">
+        <div class="card glass-card">
+          <div class="card-header">
+            Dynamic Data Table
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Column 1</th>
+                  <th scope="col">Column 2</th>
+                  <!-- Add more columns as needed -->
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Dynamic rows will be inserted here -->
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Value 1</td>
+                  <td>Value 2</td>
+                  <!-- Add more columns as needed -->
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
